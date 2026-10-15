@@ -1,26 +1,204 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
+
+/* ------------------------------------------------------------------
+   IOT LAB — brutalisme editorial
+   Kertas krem, tinta hitam, garis tegas, sudut siku.
+   Biru kobalt dominan, kuning asam untuk aksen, merah untuk aksi.
+------------------------------------------------------------------- */
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-code);
+  --font-heading: var(--font-display);
+  --font-display: var(--font-display);
+  --font-marker: var(--font-marker);
+
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-blue: var(--blue);
+  --color-blue-deep: var(--blue-deep);
+  --color-sun: var(--sun);
+  --color-green: var(--green);
+  --color-red: var(--red);
+
+  --shadow-brutal-sm: 4px 4px 0 0 var(--ink);
+  --shadow-brutal: 6px 6px 0 0 var(--ink);
+  --shadow-brutal-lg: 9px 9px 0 0 var(--ink);
+  --shadow-brutal-xl: 16px 16px 0 0 var(--ink);
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* Dunia ini bersudut siku: semua turunan radius shadcn ikut 0. */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+  --radius-3xl: 0px;
+  --radius-4xl: 0px;
+
+  --animate-marquee: marquee 32s linear infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+:root {
+  --ink: #0d0d0d;
+  --cream: #f7f4ea;
+  --cream-deep: #e7e1d1;
+  --paper: #f7f4ea;
+  --blue: #1238e8;
+  --blue-deep: #0a249f;
+  --sun: #eef11a;
+  --green: #33d17a;
+  --red: #ef3a2f;
+
+  --background: var(--cream);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--blue);
+  --primary-foreground: #ffffff;
+  --secondary: var(--sun);
+  --secondary-foreground: var(--ink);
+  --muted: var(--cream-deep);
+  --muted-foreground: #4f4b43;
+  --accent: var(--sun);
+  --accent-foreground: var(--ink);
+  --destructive: #c8261c;
+  --border: var(--ink);
+  --input: var(--ink);
+  --ring: var(--blue);
+  --radius: 0px;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    scroll-padding-top: 1rem;
+    font-synthesis: none;
+    -webkit-tap-highlight-color: transparent;
+    scrollbar-color: var(--ink) var(--cream-deep);
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display uppercase;
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: 0;
+    text-wrap: balance;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  ::selection {
+    background: var(--sun);
+    color: var(--ink);
+  }
+  :focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: 2px;
+  }
+  input, textarea {
+    caret-color: var(--red);
+  }
+  a {
+    text-underline-offset: 3px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Panel dasar: garis tinta, tanpa sudut. Bayangan ditambah per peran (lihat .pop). */
+  .brutal {
+    border: 3px solid var(--ink);
+    background: var(--paper);
+  }
+  /* Panel samping (kutipan, info): bayangan keras tetap seperti dicetak. */
+  .pop {
+    box-shadow: var(--shadow-brutal-lg);
+  }
+  /* Kartu interaktif: terangkat dengan bayangan keras saat hover. */
+  .brutal-lift {
+    transition:
+      transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 180ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .brutal-lift:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: var(--shadow-brutal-lg);
+  }
+  .brutal-lift:active {
+    transform: translate(0, 0);
+    box-shadow: 0 0 0 0 var(--ink);
+  }
+  /* Label mono kapital berjarak lebar, gaya kredit majalah. */
+  .label {
+    font-family: var(--font-code);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1.35;
+  }
+  /* Blok tag kategori di sudut kartu. */
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.75rem;
+    font-family: var(--font-code);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+}
+
+@media print {
+  body {
+    background: #fff !important;
+  }
+  .no-print {
+    display: none !important;
+  }
 }

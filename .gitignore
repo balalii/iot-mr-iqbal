@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local data (sqlite + uploads)
+/data/
+
+# prisma client (dibuat oleh `prisma generate`)
+/lib/generated/
+
+!.env.example

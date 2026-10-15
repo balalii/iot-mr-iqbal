@@ -1,0 +1,102 @@
+// Skema database portal IoT (SQLite).
+// Nama tabel & kolom snake_case dipertahankan (@@map) agar cocok dengan database lama
+// dan dengan tipe di lib/types.ts.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+enum Role {
+  teacher
+  student
+}
+
+enum MediaKind {
+  image
+  video
+  youtube
+}
+
+model Class {
+  id     Int     @id @default(autoincrement())
+  name   String
+  slug   String  @unique
+  sort   Int     @default(0)
+  groups Group[]
+
+  @@map("classes")
+}
+
+model Group {
+  id            Int      @id @default(autoincrement())
+  class_id      Int
+  number        Int
+  name          String
+  slug          String   @unique
+  project_title String   @default("")
+  tagline       String   @default("")
+  description   String   @default("")
+  how_it_works  String   @default("")
+  /// Daftar komponen, disimpan sebagai JSON string[].
+  components    String   @default("[]")
+  /// Langkah penggunaan, disimpan sebagai JSON {title, detail}[].
+  usage_steps   String   @default("[]")
+  remote_url    String   @default("")
+  remote_label  String   @default("")
+  remote_note   String   @default("")
+  code_url      String   @default("")
+  teacher_note  String   @default("")
+  /// Waktu UTC berformat SQLite "YYYY-MM-DD HH:MM:SS".
+  updated_at    String   @default(dbgenerated("CURRENT_TIMESTAMP"))
+  class         Class    @relation(fields: [class_id], references: [id], onDelete: Cascade)
+  members       Member[]
+  media         Media[]
+  users         User[]
+
+  @@index([class_id], map: "idx_groups_class")
+  @@map("groups")
+}
+
+model User {
+  id            Int     @id @default(autoincrement())
+  username      String  @unique
+  password_hash String
+  role          Role
+  name          String
+  group_id      Int?
+  created_at    String  @default(dbgenerated("CURRENT_TIMESTAMP"))
+  group         Group?  @relation(fields: [group_id], references: [id], onDelete: Cascade)
+
+  @@map("users")
+}
+
+model Member {
+  id        Int    @id @default(autoincrement())
+  group_id  Int
+  name      String
+  role      String @default("")
+  photo_url String @default("")
+  sort      Int    @default(0)
+  group     Group  @relation(fields: [group_id], references: [id], onDelete: Cascade)
+
+  @@index([group_id], map: "idx_members_group")
+  @@map("members")
+}
+
+model Media {
+  id       Int       @id @default(autoincrement())
+  group_id Int
+  kind     MediaKind
+  url      String
+  caption  String    @default("")
+  sort     Int       @default(0)
+  group    Group     @relation(fields: [group_id], references: [id], onDelete: Cascade)
+
+  @@index([group_id], map: "idx_media_group")
+  @@map("media")
+}

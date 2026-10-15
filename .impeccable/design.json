@@ -1,0 +1,422 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-13T06:53:39.770092+00:00",
+  "title": "Design System: IOT LAB",
+  "extensions": {
+    "colorMeta": {
+      "cobalt": {
+        "role": "primary",
+        "displayName": "Cobalt",
+        "canonical": "#1238e8",
+        "tonalRamp": [
+          "#061147",
+          "#091d76",
+          "#0d28a6",
+          "#1133d5",
+          "#3859f0",
+          "#7188f4",
+          "#aab8f8",
+          "#e7ebfd"
+        ]
+      },
+      "cobalt-deep": {
+        "role": "primary",
+        "displayName": "Cobalt Deep",
+        "canonical": "#0a249f",
+        "tonalRamp": [
+          "#051048",
+          "#081b78",
+          "#0b26a8",
+          "#0e31d8",
+          "#3556f2",
+          "#6f87f6",
+          "#a9b7fa",
+          "#e7ebfd"
+        ]
+      },
+      "signal-green": {
+        "role": "secondary",
+        "displayName": "Signal Green",
+        "canonical": "#33d17a",
+        "tonalRamp": [
+          "#0e3e24",
+          "#17683c",
+          "#219254",
+          "#2abb6b",
+          "#50d88d",
+          "#82e3ae",
+          "#b4eece",
+          "#eafaf1"
+        ]
+      },
+      "acid-sun": {
+        "role": "tertiary",
+        "displayName": "Acid Sun",
+        "canonical": "#eef11a",
+        "tonalRamp": [
+          "#474804",
+          "#777807",
+          "#a6a80a",
+          "#d5d80d",
+          "#f0f335",
+          "#f4f66f",
+          "#f9faa8",
+          "#fdfee7"
+        ]
+      },
+      "marker-red": {
+        "role": "tertiary",
+        "displayName": "Marker Red",
+        "canonical": "#ef3a2f",
+        "tonalRamp": [
+          "#470905",
+          "#760f09",
+          "#a6160d",
+          "#d51c10",
+          "#f04338",
+          "#f47871",
+          "#f8aeaa",
+          "#fde9e7"
+        ]
+      },
+      "destructive-red": {
+        "role": "tertiary",
+        "displayName": "Destructive Red",
+        "canonical": "#c8261c",
+        "tonalRamp": [
+          "#430d09",
+          "#701510",
+          "#9d1e16",
+          "#c9261c",
+          "#e54c43",
+          "#ec7f79",
+          "#f4b3ae",
+          "#fceae9"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#0d0d0d",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#595959",
+          "#737373",
+          "#949494",
+          "#b2b2b2",
+          "#d1d1d1",
+          "#f2f2f2"
+        ]
+      },
+      "cream-paper": {
+        "role": "neutral",
+        "displayName": "Cream Paper",
+        "canonical": "#f7f4ea",
+        "tonalRamp": [
+          "#372f15",
+          "#5c4f23",
+          "#816f31",
+          "#a68e3f",
+          "#c4ae64",
+          "#d5c590",
+          "#e6dcbd",
+          "#f8f5ed"
+        ]
+      },
+      "cream-deep": {
+        "role": "neutral",
+        "displayName": "Cream Deep",
+        "canonical": "#e7e1d1",
+        "tonalRamp": [
+          "#322c1a",
+          "#54492c",
+          "#75663d",
+          "#97834f",
+          "#b6a372",
+          "#cbbd9a",
+          "#e0d8c3",
+          "#f6f4ee"
+        ]
+      },
+      "muted-ink": {
+        "role": "neutral",
+        "displayName": "Muted Ink",
+        "canonical": "#4f4b43",
+        "tonalRamp": [
+          "#292723",
+          "#45413b",
+          "#615c52",
+          "#7c7669",
+          "#9d978b",
+          "#b9b5ac",
+          "#d5d2cd",
+          "#f3f3f1"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#262626",
+          "#404040",
+          "#595959",
+          "#737373",
+          "#949494",
+          "#b2b2b2",
+          "#d1d1d1",
+          "#f2f2f2"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page section heads and dashboard class heads; Anton uppercase 400. Mastheads scale the same face to fill their cell via container-query units (max 72cqi)."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Panel and editor-section titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Group-card titles, clamped to 3 lines."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Archivo reading text, 62-65ch max."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Mono uppercase credits, meta lists, field labels, nav cells (800 on nav)."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Mono uppercase extra-bold button text."
+      },
+      "marker": {
+        "displayName": "Marker",
+        "purpose": "Single decorative scrawl over imagery, tilted -2 to -9deg."
+      }
+    },
+    "shadows": [
+      {
+        "name": "brutal-sm",
+        "value": "3px 3px 0 0 #0d0d0d",
+        "purpose": "Resting shadow on the red CTA; focused inputs."
+      },
+      {
+        "name": "brutal",
+        "value": "5px 5px 0 0 #0d0d0d",
+        "purpose": "Button hover lift (translate -3px,-3px)."
+      },
+      {
+        "name": "brutal-lg",
+        "value": "8px 8px 0 0 #0d0d0d",
+        "purpose": "Card hover lift (translate -4px,-4px)."
+      },
+      {
+        "name": "brutal-xl",
+        "value": "12px 12px 0 0 #0d0d0d",
+        "purpose": "The single stamped accent panel; grows from 0 on load."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-press",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "All lifts, stamps, masthead and progress motion."
+      },
+      {
+        "name": "duration-button",
+        "value": "150ms",
+        "purpose": "Button lift and fill."
+      },
+      {
+        "name": "duration-card",
+        "value": "180ms",
+        "purpose": "Card lift."
+      },
+      {
+        "name": "masthead-press",
+        "value": "750ms, stagger 120ms, from translateY(105%)",
+        "purpose": "Masthead lines pressed into the page."
+      },
+      {
+        "name": "stamp",
+        "value": "500ms, delay 450ms, shadow 0 to 12px with translate -6px",
+        "purpose": "Stamped panel landing."
+      },
+      {
+        "name": "marker-sweep",
+        "value": "900ms clip-path inset(0 100% 0 0) to inset(0)",
+        "purpose": "Marker scrawl reveal."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "duration 0; smooth scroll only under prefers-reduced-motion: no-preference",
+        "purpose": "Motion gating."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Default cobalt action button; lifts with a hard ink shadow on hover.",
+      "html": "<button class=\"ds-btn-primary\">Simpan</button>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:44px;padding:0 20px;border:3px solid var(--ink,#0d0d0d);border-radius:0;font-family:var(--font-code,'JetBrains Mono',monospace);font-size:0.8rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:transform 150ms cubic-bezier(.22,1,.36,1),box-shadow 150ms cubic-bezier(.22,1,.36,1),background-color 150ms;background:var(--blue,#1238e8);color:#fff;} .ds-btn-primary:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 0 var(--ink,#0d0d0d);} .ds-btn-primary:active{transform:none;box-shadow:none;} .ds-btn-primary:focus-visible{outline:3px solid var(--blue,#1238e8);outline-offset:2px;}"
+    },
+    {
+      "name": "CTA Button",
+      "kind": "button",
+      "refersTo": "button-cta",
+      "description": "Marker-red lead action with resting 3px ink shadow; arrow pushed right.",
+      "html": "<button class=\"ds-btn-cta\">Lihat karya <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:44px;padding:0 20px;border:3px solid var(--ink,#0d0d0d);border-radius:0;font-family:var(--font-code,'JetBrains Mono',monospace);font-size:0.8rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:transform 150ms cubic-bezier(.22,1,.36,1),box-shadow 150ms cubic-bezier(.22,1,.36,1),background-color 150ms;height:56px;padding:0 28px;font-size:0.9rem;min-width:260px;justify-content:space-between;background:var(--red,#ef3a2f);color:var(--ink,#0d0d0d);box-shadow:3px 3px 0 0 var(--ink,#0d0d0d);} .ds-btn-cta:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 0 var(--ink,#0d0d0d);} .ds-btn-cta:active{transform:none;box-shadow:none;} .ds-btn-cta:focus-visible{outline:3px solid var(--blue,#1238e8);outline-offset:2px;}"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Paper button that fills acid sun on hover.",
+      "html": "<button class=\"ds-btn-outline\">Lihat source code</button>",
+      "css": ".ds-btn-outline{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:44px;padding:0 20px;border:3px solid var(--ink,#0d0d0d);border-radius:0;font-family:var(--font-code,'JetBrains Mono',monospace);font-size:0.8rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:transform 150ms cubic-bezier(.22,1,.36,1),box-shadow 150ms cubic-bezier(.22,1,.36,1),background-color 150ms;background:var(--paper,#f7f4ea);color:var(--ink,#0d0d0d);} .ds-btn-outline:hover{background:var(--sun,#eef11a);} .ds-btn-outline:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 0 var(--ink,#0d0d0d);} .ds-btn-outline:active{transform:none;box-shadow:none;} .ds-btn-outline:focus-visible{outline:3px solid var(--blue,#1238e8);outline-offset:2px;}"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Ink-framed paper field; focus turns white with a 3px hard shadow; red caret.",
+      "html": "<input class=\"ds-input\" placeholder=\"Nama proyek\" />",
+      "css": ".ds-input{height:44px;width:280px;padding:4px 14px;border:3px solid var(--ink,#0d0d0d);border-radius:0;background:var(--paper,#f7f4ea);color:var(--ink,#0d0d0d);font-family:var(--font-body,Archivo,sans-serif);font-size:0.875rem;font-weight:500;caret-color:var(--red,#ef3a2f);outline:none;transition:box-shadow 150ms,background-color 150ms;} .ds-input::placeholder{color:#4f4b43;font-weight:400;} .ds-input:focus-visible{background:#fff;box-shadow:3px 3px 0 0 var(--ink,#0d0d0d);}"
+    },
+    {
+      "name": "Cell Navigation",
+      "kind": "nav",
+      "refersTo": "nav-cell",
+      "description": "Ruled bar of mono cells; active cobalt, hover sun, login cell ink.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-logo\">IOT LAB</span><a class=\"ds-nav-cell is-active\" href=\"#\">Beranda</a><a class=\"ds-nav-cell\" href=\"#\">Karya</a><a class=\"ds-nav-cell ds-nav-login\" href=\"#\">Masuk</a></nav>",
+      "css": ".ds-nav{display:flex;height:64px;border:3px solid var(--ink,#0d0d0d);background:var(--paper,#f7f4ea);} .ds-nav-logo{display:flex;align-items:center;padding:0 20px;border-right:3px solid var(--ink,#0d0d0d);font-family:var(--font-display,Anton,Impact,sans-serif);font-size:2rem;text-transform:uppercase;line-height:1;margin-right:auto;} .ds-nav-cell{display:flex;align-items:center;padding:0 24px;border-left:3px solid var(--ink,#0d0d0d);font-family:var(--font-code,'JetBrains Mono',monospace);font-size:0.72rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink,#0d0d0d);text-decoration:none;transition:background-color 150ms,color 150ms;} .ds-nav-cell:hover{background:var(--sun,#eef11a);} .ds-nav-cell.is-active{background:var(--blue,#1238e8);color:#fff;} .ds-nav-login{background:var(--ink,#0d0d0d);color:#fff;} .ds-nav-login:hover{background:var(--red,#ef3a2f);color:var(--ink,#0d0d0d);} .ds-nav-cell:focus-visible{outline:3px solid var(--blue,#1238e8);outline-offset:-4px;}"
+    },
+    {
+      "name": "Category Tags",
+      "kind": "chip",
+      "refersTo": "tag-sun",
+      "description": "Flush pigment tag blocks, rotating cobalt / sun / red.",
+      "html": "<div class=\"ds-tags\"><span class=\"ds-tag ds-tag-blue\">Kelompok 1</span><span class=\"ds-tag ds-tag-sun\">Kelompok 2</span><span class=\"ds-tag ds-tag-red\">Kelompok 3</span><span class=\"ds-tag ds-tag-ink\">Data contoh</span></div>",
+      "css": ".ds-tags{display:flex;gap:8px;flex-wrap:wrap;} .ds-tag{display:inline-flex;align-items:center;padding:0.3rem 0.6rem;font-family:var(--font-code,'JetBrains Mono',monospace);font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;line-height:1;} .ds-tag-blue{background:var(--blue,#1238e8);color:#fff;} .ds-tag-sun{background:var(--sun,#eef11a);color:var(--ink,#0d0d0d);} .ds-tag-red{background:var(--red,#ef3a2f);color:#fff;} .ds-tag-ink{background:var(--ink,#0d0d0d);color:var(--sun,#eef11a);}"
+    },
+    {
+      "name": "Group Card",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Ink-framed issue card; corner tag on a 4:3 image well; lifts 4px with an 8px hard shadow on hover.",
+      "html": "<a class=\"ds-card\" href=\"#\"><div class=\"ds-card-img\"><span class=\"ds-card-tag\">Kelompok 1</span></div><h3 class=\"ds-card-title\">Saklar lampu otomatis berbasis sensor cahaya</h3><span class=\"ds-card-link\">Lihat portal <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></span></a>",
+      "css": ".ds-card{display:flex;flex-direction:column;width:260px;padding:10px;border:3px solid var(--ink,#0d0d0d);background:var(--paper,#f7f4ea);color:var(--ink,#0d0d0d);text-decoration:none;transition:transform 180ms cubic-bezier(.22,1,.36,1),box-shadow 180ms cubic-bezier(.22,1,.36,1);} .ds-card:hover{transform:translate(-4px,-4px);box-shadow:8px 8px 0 0 var(--ink,#0d0d0d);} .ds-card:active{transform:none;box-shadow:none;} .ds-card:focus-visible{outline:3px solid var(--blue,#1238e8);outline-offset:2px;} .ds-card-img{position:relative;aspect-ratio:4/3;background:var(--blue,#1238e8);} .ds-card-tag{position:absolute;top:0;left:0;padding:0.3rem 0.6rem;background:var(--sun,#eef11a);font-family:var(--font-code,'JetBrains Mono',monospace);font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;line-height:1;} .ds-card-title{margin:14px 6px 0;font-family:var(--font-display,Anton,Impact,sans-serif);font-weight:400;font-size:1.55rem;line-height:0.98;text-transform:uppercase;} .ds-card-link{display:flex;align-items:center;gap:8px;margin:20px 6px 4px;font-family:var(--font-code,'JetBrains Mono',monospace);font-size:0.72rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;}"
+    },
+    {
+      "name": "Stamped Panel",
+      "kind": "custom",
+      "refersTo": "panel-accent",
+      "description": "The single signal-green panel per view, stamped with a 12px hard ink shadow, holding the lead red CTA.",
+      "html": "<div class=\"ds-stamp\"><h2 class=\"ds-stamp-title\">Portal karya siswa kelas IoT</h2><span class=\"ds-stamp-bar\"></span><ul class=\"ds-stamp-list\"><li>Scan QR di prototype</li><li>Kenali anggota &amp; videonya</li></ul><button class=\"ds-stamp-cta\">Lihat karya <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button></div>",
+      "css": ".ds-stamp{width:320px;padding:32px;border:3px solid var(--ink,#0d0d0d);background:var(--green,#33d17a);color:var(--ink,#0d0d0d);transform:translate(-6px,-6px);box-shadow:12px 12px 0 0 var(--ink,#0d0d0d);} .ds-stamp-title{margin:0;font-family:var(--font-display,Anton,Impact,sans-serif);font-weight:400;font-size:3rem;line-height:0.92;text-transform:uppercase;} .ds-stamp-bar{display:block;margin-top:24px;height:4px;width:48px;background:var(--ink,#0d0d0d);} .ds-stamp-list{margin:24px 0 0;padding:0;list-style:none;font-family:var(--font-code,'JetBrains Mono',monospace);font-size:0.74rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;line-height:1.9;} .ds-stamp-cta{display:flex;width:100%;margin-top:32px;align-items:center;justify-content:space-between;height:56px;padding:0 28px;border:3px solid var(--ink,#0d0d0d);background:var(--red,#ef3a2f);color:var(--ink,#0d0d0d);font-family:var(--font-code,'JetBrains Mono',monospace);font-size:0.9rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;box-shadow:3px 3px 0 0 var(--ink,#0d0d0d);cursor:pointer;transition:transform 150ms cubic-bezier(.22,1,.36,1),box-shadow 150ms;} .ds-stamp-cta:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 0 var(--ink,#0d0d0d);} .ds-stamp-cta:focus-visible{outline:3px solid var(--blue,#1238e8);outline-offset:2px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Hard-Lined Issue",
+    "overview": "**Creative North Star: \"The Hard-Lined Issue\"**\n\nIOT LAB is an independent print magazine about student IoT work, and every student group gets its own issue. Surfaces are cells ruled in black ink on cream paper: header, cover, nav, and summaries are rows of cells divided by 3px ink lines, and corners are always square. Cobalt is the house colour and carries active cells, information panels, and the brand's dominance. Signal green marks the one stamped panel per view. Acid sun yellow appears only as small category tags and as the fill a cell takes on when you hover it. Marker red is the call to action and the handwritten scrawl.\n\nThe type sets the tone. Condensed Anton capitals are pressed into the page as mastheads that fill their cell. JetBrains Mono capitals with wide tracking serve as magazine credit lines and control labels. Archivo stays quiet underneath as reading text. Permanent Marker shows up only as an occasional red or yellow scrawl over a photo, like an editor's note.\n\nDepth is printed, not lit. Hard offset ink shadows are native to this world. The stamped panel lands with one, and interactive cards lift into one on hover. Nothing is soft, blurred, rounded, or pastel. The interface frames the students' photos, members, and videos and does not compete with them.",
+    "keyCharacteristics": [
+      "Square corners everywhere (0px radius, enforced on every shadcn radius step).",
+      "3px solid ink rules separate cells, panels, inputs, and buttons.",
+      "Cobalt dominant; one signal-green stamped panel per view; yellow kept small.",
+      "Anton display in uppercase at weight 400, sized to fill its container.",
+      "Mono uppercase labels with 0.12–0.14em tracking for all meta text and controls.",
+      "Hard offset ink shadows (3/5/8/12px) for stamps and hover lifts, never blur."
+    ],
+    "rules": [
+      {
+        "name": "The One Stamp Rule",
+        "body": "Each view has at most one signal-green panel, and it is the panel that carries the view's main point. Green is never a wash, a section background, or a pastel tint.",
+        "section": "colors"
+      },
+      {
+        "name": "The Small Sun Rule",
+        "body": "Acid yellow lives in tags, hover fills, selection, and scrawls. It never fills a panel larger than a tag block.",
+        "section": "colors"
+      },
+      {
+        "name": "The Cobalt Dominance Rule",
+        "body": "Cobalt must stay the most visible chromatic colour on any screen. This is a brand commitment.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Pastel Rule",
+        "body": "No tints, pale variants, or alpha-washed colour fields. The palette is flat, full-strength pigment on cream. The `ink/15` and `ink/40` hairlines (list dividers, dashed empty states) are the only alpha values.",
+        "section": "colors"
+      },
+      {
+        "name": "The Capitals Rule",
+        "body": "Every h1–h4 is Anton, uppercase, weight 400, letter-spacing 0, text-wrap balance. Never bold Anton and never set it in sentence case.",
+        "section": "typography"
+      },
+      {
+        "name": "The Credit Line Rule",
+        "body": "Meta text and controls (labels, nav, buttons, tags, counts) are mono uppercase with wide tracking. Body copy is never mono.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Scrawl Rule",
+        "body": "Use at most one marker note per view. It is decorative, sits over imagery, and never carries information that isn't available elsewhere.",
+        "section": "typography"
+      },
+      {
+        "name": "The Printed Shadow Rule",
+        "body": "Shadows are solid ink offsets down-right with zero blur. No ambient, soft, coloured, or upward shadows.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Stamp-Or-State Rule",
+        "body": "A shadow is either the single stamped panel's XL stamp or a reaction to hover or focus. Resting cards and panels are flat.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** frame every surface with a 3px solid ink border and keep every corner at 0px.",
+      "**Do** keep cobalt (#1238e8) the dominant colour: active cells, information panels, the default button.",
+      "**Do** give each view one signal-green stamped panel with the 12px hard ink shadow, and one red CTA inside it.",
+      "**Do** set every heading in Anton uppercase at weight 400. Set every label, nav cell, tag, and button in JetBrains Mono uppercase with 0.12–0.14em tracking. Buttons use weight 800.",
+      "**Do** use hover as a pigment change or a hard lift: sun fill for cells and outline buttons, -3px or -4px translate with a 5px or 8px ink shadow for buttons and cards.",
+      "**Do** gate motion and smooth scrolling behind reduced-motion preferences."
+    ],
+    "donts": [
+      "**Don't** round any corner or use soft, blurred, or coloured shadows.",
+      "**Don't** use pastel or tinted colour fields. Ground and panels are the same cream (#f7f4ea), and pale variants of the accents do not exist.",
+      "**Don't** fill a panel with acid sun. Yellow is for tags, hover, and selection.",
+      "**Don't** use more than one green stamped panel or more than one marker scrawl per view.",
+      "**Don't** set body copy in mono or headings in Archivo.",
+      "**Don't** put information in a marker scrawl. It is decoration over imagery."
+    ]
+  }
+}
