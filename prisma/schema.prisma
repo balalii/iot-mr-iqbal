@@ -1,4 +1,4 @@
-// Skema database portal IoT (SQLite).
+// Skema database portal IoT (PostgreSQL).
 // Nama tabel & kolom snake_case dipertahankan (@@map) agar cocok dengan database lama
 // dan dengan tipe di lib/types.ts.
 
@@ -8,7 +8,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
 }
 
 enum Role {
@@ -51,8 +51,7 @@ model Group {
   remote_note   String   @default("")
   code_url      String   @default("")
   teacher_note  String   @default("")
-  /// Waktu UTC berformat SQLite "YYYY-MM-DD HH:MM:SS".
-  updated_at    String   @default(dbgenerated("CURRENT_TIMESTAMP"))
+  updated_at    DateTime @default(now()) @db.Timestamptz(3)
   class         Class    @relation(fields: [class_id], references: [id], onDelete: Cascade)
   members       Member[]
   media         Media[]
@@ -63,14 +62,14 @@ model Group {
 }
 
 model User {
-  id            Int     @id @default(autoincrement())
-  username      String  @unique
+  id            Int      @id @default(autoincrement())
+  username      String   @unique
   password_hash String
   role          Role
   name          String
   group_id      Int?
-  created_at    String  @default(dbgenerated("CURRENT_TIMESTAMP"))
-  group         Group?  @relation(fields: [group_id], references: [id], onDelete: Cascade)
+  created_at    DateTime @default(now()) @db.Timestamptz(3)
+  group         Group?   @relation(fields: [group_id], references: [id], onDelete: Cascade)
 
   @@map("users")
 }

@@ -1,0 +1,17 @@
+# Dipakai di VPS: kopi manual sekali ke /home/vo1d/iot-mr-iqbal/docker-compose.yml (bersama file .env).
+# CI tidak menyalin file ini; CI hanya export APP_IMAGE=<image>:<sha> lalu pull + up.
+# Postgres jalan langsung di host (bukan container), diakses lewat host.docker.internal.
+services:
+  app:
+    image: ${APP_IMAGE:-ghcr.io/balalii/iot-mr-iqbal:latest}
+    container_name: iot-mr-iqbal-app
+    restart: unless-stopped
+    env_file: .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      # Hanya listen di localhost VPS; expose ke publik lewat reverse proxy (nginx).
+      - "127.0.0.1:${APP_PORT:-3706}:3000"
+    # Hanya perlu kalau R2 tidak dipakai: simpan file upload di luar container supaya tidak hilang saat redeploy.
+    # volumes:
+    #   - ./uploads:/app/data/uploads

@@ -67,7 +67,7 @@ export function slugify(s: string) {
     .slice(0, 60)
 }
 
-export function formatDate(sqliteUtc: string) {
-  const d = new Date(sqliteUtc.replace(" ", "T") + "Z")
+export function formatDate(iso: string) {
+  const d = new Date(iso)
   return d.toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })
 }

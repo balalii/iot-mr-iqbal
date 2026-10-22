@@ -8,16 +8,16 @@
     "start": "next start",
     "lint": "eslint",
     "postinstall": "prisma generate",
-    "setup": "mkdir -p data && prisma db push && prisma db seed",
-    "db:push": "prisma db push",
+    "setup": "prisma migrate deploy && prisma db seed",
+    "db:migrate": "prisma migrate dev",
     "db:seed": "prisma db seed",
     "db:studio": "prisma studio",
-    "reset-data": "rm -rf data && bun run setup"
+    "reset-data": "rm -rf data && prisma migrate reset --force && prisma db seed"
   },
   "dependencies": {
-    "@libsql/client": "^0.17.0",
-    "@prisma/adapter-libsql": "7.10.0",
+    "@prisma/adapter-pg": "7.10.0",
     "@prisma/client": "7.10.0",
+    "aws4fetch": "^1.0.20",
     "bcryptjs": "^3.0.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -29,6 +29,7 @@
     "motion": "^14.1.0",
     "nanoid": "^6.0.2",
     "next": "16.4.0",
+    "pg": "^8.23.1",
     "qrcode.react": "^4.2.0",
     "radix-ui": "^1.8.1",
     "react": "19.3.0",
@@ -42,6 +43,7 @@
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^26.6.5",
+    "@types/pg": "^8.23.1",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",

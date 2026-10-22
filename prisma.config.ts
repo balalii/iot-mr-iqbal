@@ -11,6 +11,7 @@ export default defineConfig({
     seed: "bun prisma/seed.ts",
   },
   datasource: {
-    url: process.env.DATABASE_URL ?? "file:./data/portal.db",
+    // Harus sama dengan default di lib/database-url.ts (tidak di-import: env baru dibaca di atas).
+    url: process.env.DATABASE_URL ?? "postgresql://postgres:postgres@localhost:5432/portal?schema=public",
   },
 })

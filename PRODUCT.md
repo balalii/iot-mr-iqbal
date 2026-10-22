@@ -23,7 +23,7 @@ Satu QR yang tetap sama selamanya per kelompok — isi portal bisa diperbarui si
 - Server berjalan di laptop guru/server sekolah; QR memakai `NEXT_PUBLIC_APP_URL`.
 
 ## Capabilities and Constraints
-- Next.js 16 (App Router, Cache Components), Prisma ORM 7 + SQLite (adapter libSQL), upload lokal di `data/`.
+- Next.js 16 (App Router, Cache Components), Prisma ORM 7 + PostgreSQL (adapter `pg`), upload lokal di `data/`.
 - Login guru & siswa (akun per kelompok). Siswa hanya bisa mengubah kelompoknya.
 - Media: foto (≤8 MB), video MP4/WEBM/MOV (≤80 MB), link YouTube.
 - Bahasa antarmuka: Indonesia.

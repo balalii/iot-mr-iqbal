@@ -40,7 +40,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# local data (sqlite + uploads)
+# local data (uploads + session secret)
 /data/
 
 # prisma client (dibuat oleh `prisma generate`)

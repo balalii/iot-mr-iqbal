@@ -2,7 +2,7 @@
 
 import { refresh } from "next/cache"
 import { authorizeGroup } from "@/lib/auth"
-import { db, sqliteNow } from "@/lib/db"
+import { db } from "@/lib/db"
 import type { Prisma } from "@/lib/generated/prisma/client"
 import { youtubeId } from "@/lib/portal"
 import type { MediaItem, MediaKind, Member, UsageStep } from "@/lib/types"
@@ -10,7 +10,7 @@ import { fail, safeUrl, text, type ActionResult } from "@/lib/validate"
 
 /** Ubah kolom kelompok sekaligus menandai waktu pembaruan. */
 function updateGroup(groupId: number, data: Prisma.GroupUpdateInput) {
-  return db.group.update({ where: { id: groupId }, data: { ...data, updated_at: sqliteNow() } })
+  return db.group.update({ where: { id: groupId }, data: { ...data, updated_at: new Date() } })
 }
 
 export async function saveProjectInfo(

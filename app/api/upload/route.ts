@@ -1,8 +1,6 @@
-import fs from "node:fs/promises"
-import path from "node:path"
 import { nanoid } from "nanoid"
 import { authorizeGroup } from "@/lib/auth"
-import { UPLOAD_DIR } from "@/lib/paths"
+import { storeUpload } from "@/lib/storage"
 
 const LIMITS = { image: 8 * 1024 * 1024, video: 80 * 1024 * 1024 }
 const EXT: Record<string, string> = {
@@ -48,10 +46,10 @@ export async function POST(request: Request) {
     return Response.json({ error: `Ukuran ${kind === "video" ? "video" : "foto"} maksimal ${mb} MB.` }, { status: 413 })
   }
 
-  const dir = path.join(/*turbopackIgnore: true*/ UPLOAD_DIR, `g${groupId}`)
-  await fs.mkdir(dir, { recursive: true })
-  const name = `${nanoid(12)}.${ext}`
-  await fs.writeFile(path.join(/*turbopackIgnore: true*/ dir, name), Buffer.from(await file.arrayBuffer()))
-
-  return Response.json({ url: `/api/files/g${groupId}/${name}`, kind })
+  try {
+    const url = await storeUpload(`g${groupId}/${nanoid(12)}.${ext}`, await file.arrayBuffer(), file.type)
+    return Response.json({ url, kind })
+  } catch (err) {
+    return Response.json({ error: (err as Error).message }, { status: 502 })
+  }
 }

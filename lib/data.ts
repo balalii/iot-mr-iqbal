@@ -5,9 +5,8 @@ import type { Prisma } from "./generated/prisma/client"
 import { mediaThumb } from "./portal"
 import type { ClassRow, Group, GroupFull, GroupSummary, MediaItem, Member } from "./types"
 
-// Driver libSQL untuk file lokal pada dasarnya sinkron (hanya dibungkus Promise),
-// jadi setiap getter tetap memanggil `await io()` agar Next.js tidak membekukan
-// hasil query ke static shell saat build.
+// Setiap getter memanggil `await io()` lebih dulu agar Next.js tidak membekukan
+// hasil query ke static shell saat build (build juga tidak butuh koneksi database).
 
 const ORDER = [{ sort: "asc" }, { id: "asc" }] satisfies Prisma.MemberOrderByWithRelationInput[]
 
@@ -40,6 +39,7 @@ function toGroup(record: GroupRecord): GroupFull {
     ...row,
     class_name: cls.name,
     class_slug: cls.slug,
+    updated_at: row.updated_at.toISOString(),
     components: parseJson<string[]>(row.components, []),
     usage_steps: parseJson<Group["usage_steps"]>(row.usage_steps, []),
   }

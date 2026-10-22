@@ -1,6 +1,8 @@
 import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
+  // Image Docker hanya berisi .next/standalone (lihat Dockerfile).
+  output: "standalone",
   cacheComponents: true,
   partialPrefetching: true,
   // Izinkan HP siswa di jaringan Wi-Fi sekolah membuka dev server (mis. http://192.168.1.10:3000).
